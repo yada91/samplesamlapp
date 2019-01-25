@@ -67,7 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.post('/login',
+app.get('/login',
     passport.authenticate('saml', {
         successRedirect: '/',
         failureRedirect: '/login',

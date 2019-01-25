@@ -69,7 +69,7 @@ app.use('/users', usersRouter);
 
 app.get('/login',
     passport.authenticate('saml', {
-      successRedirect: 'https://samplesamlapp.herokuapp.com/login/callback',
+      successRedirect: '/',
       failureRedirect: '/login' })
 );
 app.post('/login/callback',

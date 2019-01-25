@@ -19,11 +19,14 @@ passport.deserializeUser(function (user, done) {
 });
 passport.use(new SamlStrategy(
     {
-      path: '/login/callback',
-      entryPoint: 'https://login.microsoftonline.com/afbe2a25-78bd-4193-8279-95142c1f0169/saml2',
-      issuer: 'https://samplesamlapp.herokuapp.com',
-      cert: fs.readFileSync('SampleSAMLApp.cer', 'utf-8'),
-      signatureAlgorithm: 'sha256'
+      // path: '/login/callback',
+        entryPoint: 'https://login.microsoftonline.com/afbe2a25-78bd-4193-8279-95142c1f0169/saml2',
+        issuer: 'https://samplesamlapp.herokuapp.com',
+        callbackUrl: 'https://samplesamlapp.herokuapp.com/login/callback',
+        cert: fs.readFileSync('SampleSAMLApp.cer', 'utf-8'),
+        authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',
+        identifierFormat: null        
+        // signatureAlgorithm: 'sha256'
     },
     function(profile, done) {
       return done(null,

@@ -70,7 +70,11 @@ app.use('/users', usersRouter);
 app.get('/login',
     passport.authenticate('saml', {
       successRedirect: '/',
-      failureRedirect: '/login' })
+      failureRedirect: '/login' }),
+    function(req, res) {
+        console.log('DEBUG : ', JSON.stringify(req.body));
+        res.redirect('/login/callback');
+    }
 );
 app.post('/login/callback',
     passport.authenticate('saml', {

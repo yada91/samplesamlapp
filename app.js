@@ -69,7 +69,7 @@ app.use('/users', usersRouter);
 
 app.get('/login',
     passport.authenticate('saml', {
-      successRedirect: '/',
+      successRedirect: '/login/callback',
       failureRedirect: '/login' })
 );
 app.post('/login/callback',

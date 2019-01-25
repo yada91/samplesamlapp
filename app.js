@@ -23,8 +23,8 @@ passport.use(new SamlStrategy(
         entryPoint: 'https://login.microsoftonline.com/afbe2a25-78bd-4193-8279-95142c1f0169/saml2',
         issuer: 'https://samplesamlapp.herokuapp.com',
         callbackUrl: 'https://samplesamlapp.herokuapp.com/login/callback',
-        cert: fs.readFileSync('SampleSAMLApp.cer', 'utf-8'),
-        // authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',
+        cert: fs.readFileSync('./SampleSAMLApp.cer', 'utf-8'),
+        authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',
         identifierFormat: null
         // signatureAlgorithm: 'sha256'
     },

@@ -19,7 +19,7 @@ passport.deserializeUser(function (user, done) {
 });
 passport.use(new SamlStrategy(
     {
-      path: 'https://samplesamlapp.herokuapp.com/login/callback',
+      path: '/login/callback',
       entryPoint: 'https://login.microsoftonline.com/afbe2a25-78bd-4193-8279-95142c1f0169/saml2',
       issuer: 'https://samplesamlapp.herokuapp.com',
       cert: fs.readFileSync('SampleSAMLApp.cer', 'utf-8'),

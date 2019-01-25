@@ -67,14 +67,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.get('/login',
+app.post('/login',
     passport.authenticate('saml', {
-      successRedirect: '/',
-      failureRedirect: '/login' }),
-    function(req, res) {
-        console.log('DEBUG : ', JSON.stringify(req.body));
-        res.redirect('/login/callback');
-    }
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true})
 );
 app.post('/login/callback',
     passport.authenticate('saml', {

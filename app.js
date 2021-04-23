@@ -20,9 +20,9 @@ passport.deserializeUser(function (user, done) {
 passport.use(new SamlStrategy(
     {
       // path: '/login/callback',
-        entryPoint: 'https://pmi-e--qa.my.salesforce.com/idp/endpoint/HttpRedirect',
+        entryPoint: 'https://pmi-e--qa.my.salesforce.com/idp/login?app=0sp1m0000004CBO',
         issuer: 'https://pmi-e--qa.my.salesforce.com',
-        callbackUrl: 'https://qa-pmk.cs117.force.com/ConsumerSupport/login',
+        callbackUrl: 'https://qa-pmk.cs117.force.com/ConsumerSupport',
         // cert: fs.readFileSync('./SampleSAMLApp.cer', 'utf-8'),
          cert: fs.readFileSync('./Certificates_for_GC.crt', 'utf-8'),
         // authnContext: 'http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows',

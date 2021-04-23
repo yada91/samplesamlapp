@@ -20,7 +20,7 @@ passport.deserializeUser(function (user, done) {
 passport.use(new SamlStrategy(
     {
       // path: '/login/callback',
-        entryPoint: 'http://pmk.wiseservice.io:9999/saml',
+        entryPoint: 'https://pmi-e--qa.my.salesforce.com/idp/endpoint/HttpRedirect',
         issuer: 'https://pmi-e--qa.my.salesforce.com',
         callbackUrl: 'https://qa-pmk.cs117.force.com/ConsumerSupport/login',
         // cert: fs.readFileSync('./SampleSAMLApp.cer', 'utf-8'),
